@@ -9,6 +9,8 @@ it('can create a instance of a model', () => {
 
     expect(item.price).toBe(26.25)
     expect(item.image).toBe('')
+    item.changeName("Testownik")
+    expect(item.name).toBe("Testownik")
 })
 
 it('can create a wishlist', () => {
@@ -30,6 +32,13 @@ it('can create a wishlist', () => {
 
     expect(list.items.length).toBe(2)
     expect(list.items[0].price).toBe(26.25)
+})
 
-
+it("can add new items", () => {
+    const list = WishList.create();
+    list.add(WishListItem.create({
+        name: "test",
+        price: 12
+    }))
+    expect(list.items.length).toBe(1)
 })
