@@ -41,4 +41,7 @@ it("can add new items", () => {
         price: 12
     }))
     expect(list.items.length).toBe(1)
+    list.items[0].changeName('T')
+    expect(list.items[0].name).toBe('T')
+
 })
